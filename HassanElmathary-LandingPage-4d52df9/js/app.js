@@ -41,6 +41,21 @@ theNav.addEventListener("click", (ev) => {
       .scrollIntoView({ behavior: "smooth" });
   }
 });
+window.onscroll = function () {
+ sect.forEach(function (active) {
+    // let activeLink = theNav.querySelector(`[data-nav="${active.id}"]`);
+    if (
+      active.getBoundingClientRect().top >= -400 &&
+      active.getBoundingClientRect().top <= 150
+    ) {
+      active.classList.add("your-active-class");
+      // activeLink.classList.add("active-link");
+    } else {
+      active.classList.remove("your-active-class");
+      // activeLink.classList.remove("active-link");
+    }
+  });
+};
 /**
  * End Global Variables
  * Start Helper Functions
